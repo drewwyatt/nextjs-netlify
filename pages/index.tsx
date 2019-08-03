@@ -10,6 +10,21 @@ const ShowLink: FC<Show> = ({ id, name }) => (
     <Link href={`/p/${id}`}>
       <a>{name}</a>
     </Link>
+    <style jsx>{`
+      li {
+        list-style: none;
+        margin: 5px 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: blue;
+      }
+
+      a:hover {
+        opacity: 0.6;
+      }
+    `}</style>
   </li>
 )
 
@@ -22,6 +37,16 @@ const Index: NextPage<Props> = ({ shows }) => (
         <ShowLink key={idx} {...show} />
       ))}
     </ul>
+    <style jsx>{`
+      h1,
+      a {
+        font-family: 'Arial';
+      }
+
+      ul {
+        padding: 0;
+      }
+    `}</style>
   </Layout>
 )
 
